@@ -4,10 +4,20 @@
              xmlns:local="clr-namespace:BadgeView"
              x:Class="BadgeView.MainPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label HorizontalTextAlignment="Center" Text="Notifications" FontSize="18"/>
+                <local:Badge x:Name="BadgeNotifications" BoxColor="red"
+                             WidthRequest="18" HeightRequest="18" 
+                             VerticalOptions="Center" HorizontalOptions="Center">
+                    <x:Arguments>
+                        <x:Double>30</x:Double>
+                        <x:Double>10</x:Double>
+                    </x:Arguments>
+                </local:Badge>
+            </StackLayout>
+
+            <Button Text="Add Notification" Clicked="AddNotification"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
